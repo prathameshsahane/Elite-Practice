@@ -1,0 +1,22 @@
+import java.util.*;
+public class Q8_First_and_Last_Digit_of_Number {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int num=sc.nextInt();
+		firstlast(num);
+	}
+	public static void firstlast(int num) {
+		
+		int last=num%10;
+		while(num>9) {
+			num/=10;
+			
+		}
+		int first=num;
+		System.out.println(first+" "+last);
+		
+	}
+
+}

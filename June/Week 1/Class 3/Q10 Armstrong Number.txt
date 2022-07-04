@@ -1,0 +1,35 @@
+import java.util.*;
+public class Q10_Armstrong_Number {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int num=sc.nextInt();
+		isArmstrong(num);
+	}
+	public static void isArmstrong(int num) {
+		int count=countDigits(num);
+		int n=0;
+		int num2=num;
+		while(num>0) {
+			int rem=num%10;
+			num/=10;
+			n+=Math.pow(rem, count);
+		}
+		if(n==num2) {
+			System.out.println("Armstrong Number");
+		}
+		else {
+			System.out.println("Not a Armstrong Number");
+		}
+	}
+	public static int countDigits(int num) {
+		int count=0;
+		while(num!=0) {
+			count++;
+			num/=10;
+		}
+		return count;
+	}
+
+}
