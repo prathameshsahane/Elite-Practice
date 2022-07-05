@@ -1,0 +1,44 @@
+public class Q61_painters_partitiones_problem {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] arr= {10,20,30,40};
+		int paintersLimit=2;
+		painterPartition(arr, paintersLimit);
+		
+	}
+	public static void painterPartition(int[] arr,int paintersLimit) {
+		int low=arr[arr.length-1];
+		int high=0;
+		for (int val : arr) {
+			high+=val;
+		}
+		
+		
+		while (low<high) {
+			int mid=low+(high-low)/2;
+			int paintersRequired=paintersCalculator(arr,mid);
+			if(paintersRequired<=paintersLimit) {
+				high=mid;
+			}
+			else {
+				low=mid+1;
+			}
+		}
+		System.out.println(low);
+	}
+	public static int paintersCalculator(int[] arr, int time) {
+		// TODO Auto-generated method stub
+		int paintersCount=1;
+		int sum=0;
+		for(int i=0;i<arr.length;i++) {
+			sum+=arr[i];
+			if(sum>time) {
+				paintersCount++;
+				sum=arr[i];
+			}
+		}
+		return paintersCount;
+	}
+
+}

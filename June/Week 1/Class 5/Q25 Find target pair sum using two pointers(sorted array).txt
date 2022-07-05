@@ -1,0 +1,33 @@
+import java.util.*;
+public class Q25_two_pointer {
+	//for sorted array
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int[] arr= {1,2,3,6,7,9};
+		int target=9;
+		pairSumtp(arr, target);
+	}
+
+	public static void pairSumtp(int[] arr, int target) {
+		Arrays.sort(arr);
+		int l=0,r=arr.length-1;
+		while (l<r) {
+			int currSum=arr[l]+arr[r];
+			if(currSum<target) {
+				l++;
+			}
+			else if (currSum>target) {
+				r--;
+			}
+			else {
+				System.out.println(arr[l]+" "+arr[r]);
+				l++;
+				r--;
+			}
+		}
+		
+	}
+	
+
+}
