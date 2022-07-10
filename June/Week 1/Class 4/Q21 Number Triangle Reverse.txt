@@ -1,0 +1,29 @@
+import java.util.*;
+public class Q21_Triangle_Number_Reverse {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		printTriangleReverse(n);
+	}
+
+	private static void printTriangleReverse(int n) {
+		// TODO Auto-generated method stub
+		int starsLimit=1;
+		int val=1;
+		int temp=1;
+		int range=2;
+		for(int i=0;i<n;i++) {
+			for(int j=0;j<starsLimit;j++) {
+				System.out.print(val+" ");
+				val--;
+			}
+			starsLimit++;
+			System.out.println();
+			val=temp+range;
+			range++;
+		}
+	}
+
+}

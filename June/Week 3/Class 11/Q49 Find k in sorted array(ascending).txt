@@ -1,0 +1,26 @@
+public class Q49_Find_k_in_sorted_array {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] arr= {7,8,17,29,63,77,83,89,97};
+		int k=97;
+		findkIndex(arr, k);
+	}
+	public static void findkIndex(int[] arr,int k) {
+		int start=0;
+		int end=arr.length-1;
+		while(start<=end) {
+			int mid=start+(end-start)/2;
+			if(k>arr[mid]) {
+				start=mid+1;
+			}
+			else if (k<arr[mid]) {
+				end=mid-1;
+			}
+			else {
+				System.out.println("Index: "+mid);
+				break;
+			}
+		}
+	}
+}

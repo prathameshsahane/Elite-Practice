@@ -1,0 +1,24 @@
+import java.util.*;
+public class Q17_Number_Triangle_alwaysStartswith1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		printPattern2(n);
+	}
+	public static void printPattern2(int n) {
+		int starsLimit=1;
+		int val=1;
+		for(int i=0;i<n;i++) {
+			val=1;
+			for(int j=0;j<starsLimit;j++) {
+				System.out.print(val+" ");
+				val++;
+			}
+			starsLimit++;
+			System.out.println();
+		}
+	}
+
+}

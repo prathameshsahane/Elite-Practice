@@ -1,0 +1,28 @@
+public class Q31_Majority_Element_usingMooresVotingAlgo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] arr= {2,2,1,1,1,2,2};
+		System.out.println(majorityElement(arr));
+	}
+
+	private static int majorityElement(int[] arr) {
+		// TODO Auto-generated method stub
+		int majorityindex=0;
+		int count=1;
+		for(int i=1;i<arr.length;i++) {
+			if(arr[i]==arr[majorityindex]) {
+				count++;
+			}
+			else {
+				count--;
+			}
+			if(count==0) {
+				count=1;
+				majorityindex=i;
+			}
+		}
+		return arr[majorityindex];
+	}
+
+}

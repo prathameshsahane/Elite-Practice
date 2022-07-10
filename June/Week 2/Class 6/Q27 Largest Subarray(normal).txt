@@ -1,0 +1,22 @@
+public class Q27_largest_SubArray_normal {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] arr= {-1,-5,-2,6,-7,3,8,-4};
+		largestSubArray(arr);
+	}
+
+	private static void largestSubArray(int[] arr) {
+		// TODO Auto-generated method stub
+		int maxSum=Integer.MIN_VALUE;
+		for(int i=0;i<arr.length;i++) {
+			int sum=0;
+			for(int j=i;j<arr.length;j++) {
+				sum+=arr[j];
+				maxSum=Math.max(maxSum, sum);
+			}
+		}
+		System.out.println(maxSum);
+	}
+
+}

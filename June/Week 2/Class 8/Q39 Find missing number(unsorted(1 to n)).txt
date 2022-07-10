@@ -1,0 +1,17 @@
+public class Q39_Find_Missing_Number_unsorted_1ton {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] arr= {1,5,2,6,3};
+		missingNumber(arr);
+	}
+	public static void missingNumber(int[] arr) {
+		int n=arr.length+1;
+		int sum=n*(n+1)/2;
+		for (int val : arr) {
+			sum-=val;
+		}
+		System.out.println(sum);
+	}
+
+}

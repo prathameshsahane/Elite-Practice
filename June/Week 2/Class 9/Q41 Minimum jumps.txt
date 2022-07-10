@@ -1,0 +1,23 @@
+public class Q41_Minimum_numberOf_Steps {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] nums = {2,3,1,1,4};
+		System.out.println(minJumps(nums));
+	}
+	public static int minJumps(int[] nums) {
+		int k=nums.length-1;
+		int count=0;
+		while(k!=0) {
+			for(int i=0;i<nums.length;i++) {
+				if(nums[i]>=k-i) {
+					k=i;
+					count++;
+					break;
+				}
+			}
+		}
+		return count;
+	}
+	
+}

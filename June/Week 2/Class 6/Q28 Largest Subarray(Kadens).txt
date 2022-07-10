@@ -1,0 +1,30 @@
+public class Q28_Largest_SubArray_Kadens {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] arr= {-1,-5,-2,6,-7,3,8,-4};
+		largestSubArray2(arr);
+	}
+
+	private static void largestSubArray2(int[] arr) {
+		// TODO Auto-generated method stub
+		int maxSum=Integer.MIN_VALUE;
+		int currSum=0;
+		int startIndex=0;
+		int endIndex=0;
+		for(int i=0;i<arr.length;i++) {
+			currSum+=arr[i];
+			if(maxSum<currSum) {
+				maxSum=currSum;
+				endIndex=i;
+			}
+			if(currSum<0) {
+				currSum=0;
+				startIndex=i;
+			}
+		}
+		System.out.println(maxSum);
+		System.out.println("Start Index:"+startIndex+" "+"\nEnd Index:"+endIndex);
+	}
+
+}

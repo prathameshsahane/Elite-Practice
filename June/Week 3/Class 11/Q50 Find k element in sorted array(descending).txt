@@ -1,0 +1,27 @@
+public class Q50_Find_k_element_sorted_array_descending {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] arr= {97,89,77,63,55,29,11,9,7};
+		int k=97;
+		findkIndex(arr, k);
+	}
+	public static void findkIndex(int[] arr,int k) {
+		int start=0;
+		int end=arr.length-1;
+		while(start<=end) {
+			int mid=start+(end-start)/2;
+			if(k>arr[mid]) {
+				end=mid-1;
+			}
+			else if (k<arr[mid]) {
+				start=mid+1;
+			}
+			else {
+				System.out.println("Index: "+mid);
+				break;
+			}
+		}
+	}
+
+}
