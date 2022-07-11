@@ -1,0 +1,34 @@
+public class Q52_Continuous_Subarray_Sum {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] nums = {23,2,4,6,7}; int k = 6;
+		System.out.println(checkSubArraySum(nums, k));
+		
+	}
+	public static boolean checkSubArraySum(int[] arr,int k) {
+		int prefixSum=arr[0];
+		for(int i=1;i<arr.length;i++) {
+			if(arr[i]==arr[i-1]) {
+				if(arr[i]==0 || arr[i]%k==0) {
+					return true;
+				}
+				
+			}
+			prefixSum+=arr[i];
+			if(prefixSum%k==0) {
+				return true;
+			}
+			int temp=prefixSum;
+			int left_pos=0;
+			while(temp>=k && i-left_pos>1) {
+				temp-=arr[left_pos++];
+				if(temp%k==0) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
+}
